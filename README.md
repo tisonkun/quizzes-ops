@@ -76,6 +76,8 @@ Add quiz objects to `src/data/quizzes.ts`:
 
 ## Current Quizzes
 
+These questions are just for demonstration purposes and can be modified or expanded.
+
 1. **ASF Incubator PMC Onboarding** - Apache Incubator PMC basics (3 questions)
 2. **ASF Director Onboarding** - ASF Board of Directors training (3 questions)
 

@@ -11,9 +11,11 @@ export default function Home() {
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300">
             Choose a category to start your quiz
+            <br />
+            (These questions are just for demonstration purposes and can be modified or expanded.)
           </p>
         </div>
-        
+
         <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
           {quizzes.map((quiz) => (
             <Link
