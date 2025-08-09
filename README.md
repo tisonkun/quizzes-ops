@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quiz System
 
-## Getting Started
+A Next.js-based quiz application supporting multi-category question and answer workflows.
 
-First, run the development server:
+## Features
+
+- ✅ **Multi-category quizzes** with different topics
+- ✅ **Optional background introduction** before each quiz
+- ✅ **Multiple choice questions** with instant feedback
+- ✅ **Detailed explanations** for correct/incorrect answers
+- ✅ **Navigation controls** (previous/next questions)
+- ✅ **Progress tracking** and completion statistics
+- ✅ **Responsive design** for desktop and mobile
+- 🎨 **Modern UI** with dark mode support
+
+## Tech Stack
+
+- **Framework**: Next.js 15.4.6 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Package Manager**: pnpm
+
+## Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm run dev
+
+# Build for production
+pnpm run build
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── page.tsx           # Homepage with quiz categories
+│   └── quiz/[id]/page.tsx # Dynamic quiz pages
+├── data/
+│   └── quizzes.ts         # Quiz content and data
+└── types/
+    └── quiz.ts            # TypeScript type definitions
+```
 
-## Learn More
+## Adding New Quizzes
 
-To learn more about Next.js, take a look at the following resources:
+Add quiz objects to `src/data/quizzes.ts`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```typescript
+{
+  id: 'your-quiz-id',
+  title: 'Your Quiz Title',
+  description: 'Optional background information',
+  questions: [
+    {
+      id: 'q1',
+      question: 'Your question?',
+      options: [
+        { id: 'a', text: 'Option A', isCorrect: false },
+        { id: 'b', text: 'Option B', isCorrect: true },
+        // ... more options
+      ],
+      explanation: 'Answer explanation'
+    }
+    // ... more questions
+  ]
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Current Quizzes
 
-## Deploy on Vercel
+1. **ASF Incubator PMC Onboarding** - Apache Incubator PMC basics (3 questions)
+2. **ASF Director Onboarding** - ASF Board of Directors training (3 questions)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm run dev    # Development mode
+pnpm run build  # Build for production
+pnpm start      # Start production server
+pnpm run lint   # Code linting
+```
+
+## License
+
+MIT License
